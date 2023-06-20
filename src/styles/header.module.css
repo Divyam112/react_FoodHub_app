@@ -1,0 +1,62 @@
+.header_main{
+    width: 95%;
+    display: flex;
+    border: 3px solid red;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    z-index: 101;
+    position: sticky;
+}
+
+.logo img{
+    height: 70px;
+    width: 100%;
+}
+
+.page_list ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.page_list ul a{
+    text-decoration: none;
+}
+
+.page_list ul li{
+    margin: 10px;
+}
+.cart_item_count {
+    border: 1px solid rgb(82, 240, 82);
+    background-color: rgb(90, 243, 90);
+    color: white;
+    padding: 1px 4px;
+    border-radius: 6px;
+    margin-right: 5px;
+}
+.page_list ul li a:hover{
+    cursor: pointer;
+    color: orange;
+}
+.cart_item_count:hover{
+    cursor: pointer;
+    background-color: orange;
+}
+
+.signInOut button{
+    color: white;
+    background-color: rgb(113, 113, 247);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+.signInOut button:hover{
+    cursor: pointer;
+    background-color: rgb(86, 86, 237);
+}
+
+.searchIcon {
+    height: 20px;
+}
