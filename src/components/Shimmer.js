@@ -2,7 +2,7 @@ import styles from "../styles/shimmer.module.css";
 
 const Shimmer = () => {
   return (
-    <div className={styles.shimmer}>
+    <div data-testid="test_shimmer" className={styles.shimmer}>
       {Array.apply(null, Array(10)).map((index) => {
         return (
           <div key={Math.random()} className={styles.shimmer_box}>

@@ -7,7 +7,7 @@ const RestaurantsList = (param) => {
   return restaurantList?.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className={styles.restaurants_list}>
+    <div data-testid="test_restaurant_list" className={styles.restaurants_list}>
       {restaurantList?.map((restaurant) => (
         <Restaurants
           key={`restaurant-${restaurant?.data?.id}`}

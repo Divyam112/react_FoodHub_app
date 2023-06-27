@@ -11,7 +11,7 @@ const Header = () => {
     <div className={styles.header_main}>
       <div className={styles.logo}>
         <a href="/">
-          <img alt="food hub" src={logo} />
+          <img data-testid="test_logo" alt="food hub" src={logo} />
         </a>
       </div>
       <div className={styles.page_list}>
@@ -23,20 +23,22 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="/cart">
-              <span className={styles.cart_item_count}>{cartItemsCount}</span>
+            <Link data-testid="test_cartPage" to="/cart">
+              <span data-testid="test_cart" className={styles.cart_item_count}>
+                {cartItemsCount}
+              </span>
               <span>Cart</span>
             </Link>
           </li>
         </ul>
       </div>
-      <div>{auth?.user?.name}</div>
+      <div data-testid="test_auth">{auth?.user?.name}</div>
       <div className={styles.signInOut}>
         {auth.user ? (
           <button onClick={auth.logout}>Log Out</button>
         ) : (
           <Link to="/login">
-            <button>Log In</button>
+            <button data-testid="test_loginBtn">Log In</button>
           </Link>
         )}
       </div>

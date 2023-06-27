@@ -36,7 +36,7 @@ const ContactUs = () => {
 
   const onHandleChangeNumeric = (e) => {
     let value = e.target.value;
-    if (mobileNumber.length == 1 && value === "") {
+    if (mobileNumber.length === 1 && value === "") {
       setMobileNumber(e.target.value);
     }
     if (!Number(value)) {
@@ -70,7 +70,7 @@ const ContactUs = () => {
               placeholder={"Full Name"}
               onChange={(e) => setName(e.target.value)}
             />
-            <span className={styles.validation_check}>
+            <span data-testid="test_name" className={styles.validation_check}>
               {isSubmit && name === "" ? "Enter your name" : ""}
             </span>
             <span style={{ color: "red", textAlign: "left" }}>*</span>
@@ -96,7 +96,7 @@ const ContactUs = () => {
               placeholder="Mobile Number(Optional)"
               onChange={(e) => onHandleChangeNumeric(e)}
             />
-            <span className={styles.validation_check}>
+            <span data-testid="test_mobile" className={styles.validation_check}>
               {isSubmit && mobileNumber !== "" && mobileNumber.length !== 10
                 ? "Enter valid mobile number"
                 : ""}
@@ -113,9 +113,15 @@ const ContactUs = () => {
               {isSubmit && message === "" ? "Leave some feedback" : ""}
             </span>
             <div>
-              <button className={styles.submit_btn}>Submit feedback</button>
+              <button
+                data-testid="test_submitBtn"
+                className={styles.submit_btn}
+              >
+                Submit feedback
+              </button>
               <button
                 type="reset"
+                data-testid="test_ClearBtn"
                 className={styles.submit_btn}
                 onClick={HandleClearButton}
               >

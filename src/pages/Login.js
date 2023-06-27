@@ -45,7 +45,7 @@ const Login = () => {
             placeholder="Email Address"
             onChange={(e) => setEmail(e.target.value)}
           />
-          <div className={styles.validation_check}>
+          <div data-testid="test_email" className={styles.validation_check}>
             {isSubmit && email === "" ? "Enter your email address" : ""}
           </div>
         </div>
@@ -57,14 +57,20 @@ const Login = () => {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <div className={styles.validation_check}>
+          <div data-testid="test_password" className={styles.validation_check}>
             {isSubmit && password === "" ? "Enter password" : ""}
           </div>
         </div>
         <div className={styles.field}>
-          <button className={styles.submit_btn}>Login</button>
+          <button data-testid="test_submitBtn" className={styles.submit_btn}>
+            Login
+          </button>
         </div>
-        <div className={styles.login_guest} onClick={HandleLoginAsGuest}>
+        <div
+          data-testid="test_guest"
+          className={styles.login_guest}
+          onClick={HandleLoginAsGuest}
+        >
           login as a Guest
         </div>
       </form>

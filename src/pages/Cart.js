@@ -25,7 +25,7 @@ const Cart = () => {
 
   if (cartItems?.items?.length === 0) {
     return (
-      <div>
+      <div data-testid="test_cartEmpty">
         <img src={emptyCartImg} alt="cart empty" />
         <p style={{ fontWeight: "bold", lineHeight: "5px" }}>
           Your cart is empty
@@ -34,6 +34,7 @@ const Cart = () => {
           You can go to home page to view more restaurants
         </p>
         <button
+          data-testid="test_restaurant"
           className={styles.checkout_btn}
           onClick={() => {
             navigate("/", window.scrollTo(0, 0));
@@ -46,7 +47,7 @@ const Cart = () => {
   }
   return (
     <>
-      <div className={styles.cartContainer}>
+      <div data-testid="test_cartFilled" className={styles.cartContainer}>
         <div className={styles.rest_name}>
           <img
             src={`${CDN_IMG_URL}${cartItems?.restaurant?.img}`}
@@ -64,7 +65,7 @@ const Cart = () => {
             return (
               <div className={styles.cart_item} key={`cartItem-${item?.id}`}>
                 <div>{item?.name}</div>
-                <div className={styles.cart_btn}>
+                <div className={`${styles.cart_btn} test_itemUpdate`}>
                   <span onClick={() => HandleReduceItem(item)}>-</span>
                   <span>{item?.count}</span>
                   <span onClick={() => HandleAddItem(item)}>+</span>
@@ -107,6 +108,7 @@ const Cart = () => {
       <div>
         <button className={styles.checkout_btn}>Checkout</button>
         <button
+          data-testid="test_clearBtn"
           className={styles.checkout_btn}
           onClick={() => HandleClearCart()}
         >

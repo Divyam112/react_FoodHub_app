@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import styles from "../styles/body.module.css";
 import RestaurantsList from "./RestaurantsList";
 import useRestaurantList from "../hooks/useRestaurantList";
@@ -34,7 +33,9 @@ const Home = () => {
           setFilterRestaurantList={setFilterRestaurantList}
         />
         <div>
-          <h1>Restaurent does not found !!</h1>
+          <h1 data-testid="test_rest_not_searched">
+            Restaurent does not found !!
+          </h1>
         </div>
       </>
     );

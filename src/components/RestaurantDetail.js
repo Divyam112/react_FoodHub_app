@@ -40,7 +40,7 @@ const RestaurantDetail = () => {
     );
     if (findItem) {
       return (
-        <div className={styles.add_button}>
+        <div className={`${styles.add_button} test_menu_btn`}>
           <span onClick={() => HandleRemoveItemInCart(item)}>-</span>
           <span>{findItem?.count}</span>
           <span onClick={() => HandleAddItemInCart(item)}>+</span>
@@ -49,7 +49,7 @@ const RestaurantDetail = () => {
     } else {
       return (
         <div
-          className={styles.add_button}
+          className={`${styles.add_button} test_menu_btn`}
           onClick={() => HandleAddItemInCart(item)}
         >
           ADD
@@ -62,7 +62,10 @@ const RestaurantDetail = () => {
     <Shimmer />
   ) : (
     <div className={styles.restaurant_box}>
-      <div className={styles.restaurant_name_rate}>
+      <div
+        data-testid="test_rest_outerMenu"
+        className={styles.restaurant_name_rate}
+      >
         <div className={styles.restaurant_name}>
           <p className={styles.rest_name}>{restaurantMenuOuter?.name}</p>
           <p>{restaurantMenuOuter?.cuisines?.join(",")}</p>
@@ -90,7 +93,7 @@ const RestaurantDetail = () => {
           <li>₹{restaurantMenuOuter?.costForTwo / 100} FOR TWO</li>
         </ul>
       </div>
-      <div className={styles.menu_container}>
+      <div data-testid="test_rest_Menu" className={styles.menu_container}>
         {
           /*total*/
           restaurantMenu?.map((allItems) => {

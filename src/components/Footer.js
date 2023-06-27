@@ -17,6 +17,7 @@ const Footer = () => {
           <ul className={styles.footer_list}>
             <li>
               <Link
+                data-testid="test_aboutus"
                 to="/about"
                 /*target="_blank"*/ onClick={() => {
                   window.scroll(0, 0);
@@ -38,6 +39,7 @@ const Footer = () => {
           <ul className={styles.footer_list}>
             <li>
               <Link
+                data-testid="test_contact"
                 to="/contact"
                 onClick={() => {
                   window.scroll(0, 0);
@@ -88,6 +90,7 @@ const Footer = () => {
       <div className={`${styles.footer_detail} ${styles.item_align}`}>
         <div className={styles.logo}>
           <Link
+            data-testid="test_logo"
             to="/"
             onClick={() => {
               window.scroll(0, 0);
