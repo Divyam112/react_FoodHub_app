@@ -10,9 +10,9 @@ const Header = () => {
   return (
     <div className={styles.header_main}>
       <div className={styles.logo}>
-        <a href="/">
+        <Link to="/">
           <img data-testid="test_logo" alt="food hub" src={logo} />
-        </a>
+        </Link>
       </div>
       <div className={styles.page_list}>
         <ul>

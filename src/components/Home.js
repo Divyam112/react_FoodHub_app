@@ -3,7 +3,7 @@ import RestaurantsList from "./RestaurantsList";
 import useRestaurantList from "../hooks/useRestaurantList";
 import SearchBar from "../pages/SearchBar";
 import useOnline from "../hooks/useOnline";
-import { ALL_RESTAURANT_URL } from "../utils/Constants.js";
+import Shimmer from "./Shimmer";
 
 const Home = () => {
   const [
@@ -25,7 +25,7 @@ const Home = () => {
     );
   }
 
-  if (filterRestaurantList.length == 0 && allRestaurantList.length != 0) {
+  if (filterRestaurantList?.length === 0 && allRestaurantList?.length != 0) {
     return (
       <>
         <SearchBar
@@ -41,7 +41,9 @@ const Home = () => {
     );
   }
 
-  return (
+  return filterRestaurantList?.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className={styles.main_body}>
       <SearchBar
         restaurantList={allRestaurantList}

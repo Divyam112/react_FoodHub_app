@@ -1,13 +1,13 @@
 .header_main{
-    width: 95%;
+    width: 98%;
     display: flex;
-    border: 3px solid red;
     justify-content: space-between;
     align-items: center;
-    text-align: center;
-    padding: 5px;
+    padding: 10px;
     z-index: 101;
     position: sticky;
+    box-shadow: 0 10px 5px -5px #d3d3d3;
+
 }
 
 .logo img{

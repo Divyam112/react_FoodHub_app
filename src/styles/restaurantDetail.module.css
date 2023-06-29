@@ -1,7 +1,12 @@
+.rest_container{
+    width: 100%;
+}
+
 .restaurant_box{
     width:80%;
     margin-bottom: 10px;
-    text-align: left;   
+    text-align: left; 
+    margin: auto;
 }
 
 .restaurant_name_rate{
@@ -133,4 +138,64 @@
 }
 .add_button span:hover {
     transform: scale(1.5);
+}
+
+.modal_Container{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    text-align: left;
+}
+
+.modal_content {
+    background-color: white;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35%;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.close {
+    color: Black;
+    float: right;
+}
+
+.close:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.popup_btContainer{
+ display: flex;
+ justify-content: space-between;
+ margin: 10px;
+}
+
+.pop_btn{
+    width: 45%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid blue;
+    border-radius: 6px;
+    transition: 0.1s background-color;
+    cursor: pointer;
+}
+
+.pop_btnNO {
+    background-color: white;
+    color: blue;
+}
+
+.pop_btnYes {
+    background-color: blue;
+    color: white;
+}
+.pop_btnYes:hover,.pop_btnNO:hover {
+    box-shadow: 0 0 3px rgb(4, 4, 127);
 }
