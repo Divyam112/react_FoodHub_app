@@ -23,3 +23,37 @@ body {
     font-weight: bold;
     background-color: lightgray;
 }
+
+/* submit and clear button */
+
+.submit_btnContainer {
+    padding: 15px 50px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s background-color;
+}
+
+.submit_Btn {
+    background-color: blue;
+}
+
+.clear_Btn {
+    margin-left: 20px;
+    background-color: rgb(240, 49, 49);
+}
+
+.submit_btnContainer:hover {
+    box-shadow: 0 3px 3px gray;
+}
+
+.submit_Btn:active {
+    background-color: rgb(4, 4, 127);
+}
+
+.clear_Btn:active {
+    background-color: rgb(209, 19, 19);
+}

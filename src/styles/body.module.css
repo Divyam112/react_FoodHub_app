@@ -6,38 +6,25 @@
 
 .searchContainer{
     padding: 20px;
-   
+    margin-bottom: 30px;
+    border-bottom: 1px dashed lightgray;  
 }
 .searchContainer input{
     margin-right: 20px;
-    padding: 10px;
+    padding: 15px 20px;
     font-size: 15px;
     width: 300px;
     border: 1px solid #c1c0c0;
-    border-radius: 6px;
+    border-radius: 50px;
 }
 
 .searchContainer input:focus {
     outline: none;
 }
-.searchContainer button{
-    padding: 10px;
-    font-size: 15px;
-    background-color: blue;
-    color: white;
-    border-radius: 6px;
-    border: none;
-    transition: 0.5s background-color;
-}
-.searchContainer button:hover{
-    cursor: pointer;
-}
-.searchContainer button:active{
-    background-color: rgb(4, 4, 127);
-}
 .restaurants_list{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 .restaurants_list a {
     color: inherit;

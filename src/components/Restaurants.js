@@ -12,7 +12,12 @@ const Restaurants = (param) => {
     costForTwo,
   } = param.restaurant;
   return (
-    <Link to={`restaurant/${id}`}>
+    <Link
+      to={`restaurant/${id}`}
+      onClick={() => {
+        window.scroll(0, 0);
+      }}
+    >
       <div className={styles.restaurant}>
         <div className={styles.restaurant_img}>
           <img

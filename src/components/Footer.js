@@ -1,5 +1,5 @@
 import styles from "../styles/footer.module.css";
-import logo from "../assets/images/Logo.png";
+import logo from "../assets/images/Logo.jpg";
 import iosAppStore from "../assets/images/app-store.png";
 import googlePlayStore from "../assets/images/google-play-store.png";
 import facebook from "../assets/images/facebook.png";

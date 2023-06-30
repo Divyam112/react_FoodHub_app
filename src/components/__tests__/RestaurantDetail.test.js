@@ -24,7 +24,7 @@ test("Shimmer should be loaded first", async () => {
   );
 
   const shimmer = restMenu.getByTestId("test_shimmer");
-  expect(shimmer.children.length).toBe(10);
+  expect(shimmer.children.length).toBe(20);
 });
 
 test("Restaurant Outer Detail should be loaded", async () => {

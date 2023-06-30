@@ -24,7 +24,7 @@ test("Shimmer should be loaded on home ", async () => {
     </StaticRouter>
   );
   const shimmer = home.getByTestId("test_shimmer");
-  expect(shimmer.children.length).toBe(10);
+  expect(shimmer.children.length).toBe(20);
 });
 
 test("Restaurants should be loaded on home ", async () => {

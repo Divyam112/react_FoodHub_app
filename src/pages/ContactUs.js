@@ -61,7 +61,11 @@ const ContactUs = () => {
       <div className={styles.bottom_item}>
         <div className={styles.form_div}>
           <form onSubmit={HandleSubmitFeedback}>
-            <span style={{ color: "red", textAlign: "left" }}>*</span>
+            <span
+              style={{ color: "red", textAlign: "left", marginLeft: "8px" }}
+            >
+              *
+            </span>
             <input
               className={styles.input_field}
               type="text"
@@ -73,7 +77,11 @@ const ContactUs = () => {
             <span data-testid="test_name" className={styles.validation_check}>
               {isSubmit && name === "" ? "Enter your name" : ""}
             </span>
-            <span style={{ color: "red", textAlign: "left" }}>*</span>
+            <span
+              style={{ color: "red", textAlign: "left", marginLeft: "8px" }}
+            >
+              *
+            </span>
             <input
               className={styles.input_field}
               type="email"
@@ -101,7 +109,11 @@ const ContactUs = () => {
                 ? "Enter valid mobile number"
                 : ""}
             </span>
-            <span style={{ color: "red", textAlign: "left" }}>*</span>
+            <span
+              style={{ color: "red", textAlign: "left", marginLeft: "8px" }}
+            >
+              *
+            </span>
             <textarea
               className={`${styles.input_field} ${styles.input_textArea}`}
               name="subject"
@@ -115,14 +127,14 @@ const ContactUs = () => {
             <div>
               <button
                 data-testid="test_submitBtn"
-                className={styles.submit_btn}
+                className="submit_btnContainer submit_Btn"
               >
                 Submit feedback
               </button>
               <button
                 type="reset"
                 data-testid="test_ClearBtn"
-                className={styles.submit_btn}
+                className="submit_btnContainer clear_Btn"
                 onClick={HandleClearButton}
               >
                 Clear

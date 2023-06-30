@@ -17,14 +17,21 @@ const SearchBar = (param) => {
 
   return (
     <div className={styles.searchContainer}>
-      <input data-testid ="test_search_input"
+      <input
+        data-testid="test_search_input"
         type="text"
         placeholder="Search restaurants"
         onChange={(e) => {
           setSearchText(e.target.value);
         }}
       />
-      <button data-testid="test_search_btn" onClick={searchTextInRestaurants}>Search</button>
+      <button
+        data-testid="test_search_btn"
+        className="submit_btnContainer submit_Btn"
+        onClick={searchTextInRestaurants}
+      >
+        Search
+      </button>
     </div>
   );
 };

@@ -25,7 +25,7 @@ const Cart = () => {
 
   if (cartItems?.items?.length === 0) {
     return (
-      <div data-testid="test_cartEmpty">
+      <div data-testid="test_cartEmpty" style={{ margin: "30px" }}>
         <img src={emptyCartImg} alt="cart empty" />
         <p style={{ fontWeight: "bold", lineHeight: "5px" }}>
           Your cart is empty
@@ -35,7 +35,7 @@ const Cart = () => {
         </p>
         <button
           data-testid="test_restaurant"
-          className={styles.checkout_btn}
+          className="submit_btnContainer submit_Btn"
           onClick={() => {
             navigate("/", window.scrollTo(0, 0));
           }}
@@ -105,11 +105,11 @@ const Cart = () => {
           </span>
         </div>
       </div>
-      <div>
-        <button className={styles.checkout_btn}>Checkout</button>
+      <div style={{ margin: "30px" }}>
+        <button className="submit_btnContainer submit_Btn">Checkout</button>
         <button
           data-testid="test_clearBtn"
-          className={styles.checkout_btn}
+          className="submit_btnContainer clear_Btn"
           onClick={() => HandleClearCart()}
         >
           Clear Cart

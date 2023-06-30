@@ -2,7 +2,8 @@
     width: 80%;
     display: flex;
     flex-wrap: wrap;
-    margin: 20px;
+    justify-content: space-around;
+    margin-top: 50px;
 }
 .shimmer_box {
     width: 250px;

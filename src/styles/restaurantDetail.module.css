@@ -4,9 +4,8 @@
 
 .restaurant_box{
     width:80%;
-    margin-bottom: 10px;
     text-align: left; 
-    margin: auto;
+    margin:50px auto;
 }
 
 .restaurant_name_rate{
@@ -79,8 +78,12 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 5px 5px 50px 5px;
+   padding: 5px 5px 30px 5px;
 }
+
+/* .menu_box:nth-child(even){
+background-color:rgb(255, 251, 251)
+} */
 .menu_detail{
     font-size: 14px;
     font-weight: bold;

@@ -64,8 +64,11 @@
     margin-right: 20px;
     transition: 0.5s all;
     margin-bottom: 10px;
+    transition: 0.3s background-color;
 }
-
+.submit_btn:hover {
+    box-shadow: 0 3px 3px gray;
+}
 .submit_btn:active {
     background-color: rgb(4, 4, 127);
 }
