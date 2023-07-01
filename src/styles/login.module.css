@@ -62,7 +62,6 @@
     cursor: pointer;
     font-size: 15px;
     margin-right: 20px;
-    transition: 0.5s all;
     margin-bottom: 10px;
     transition: 0.3s background-color;
 }
@@ -73,6 +72,10 @@
     background-color: rgb(4, 4, 127);
 }
 
+.submit_btn[disabled] {
+    pointer-events: none;
+    background-color: gray;
+}
 .login_guest{
 color: #4d2dde;
 font-weight: bold;

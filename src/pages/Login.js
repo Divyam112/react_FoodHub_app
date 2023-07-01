@@ -3,6 +3,8 @@ import styles from "../styles/login.module.css";
 import login from "../assets/images/login.jpg";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../utils/userContext";
+import { toast } from "react-toastify";
+import { TOAST_DURATION } from "../utils/Constants";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -10,6 +12,7 @@ const Login = () => {
   const [isSubmit, setIsSubmit] = useState(false);
   const navigate = useNavigate();
   const auth = useAuth();
+  const [isCheckoutDisable, setIsCheckoutDisable] = useState(false);
 
   const HandleLogin = async (e) => {
     e.preventDefault();
@@ -19,7 +22,12 @@ const Login = () => {
       error = true;
     }
     if (!error) {
-      alert("The Email you entered is not registered!!");
+      setIsCheckoutDisable(true);
+      //alert("The Email you entered is not registered!!");
+      toast.error("The Email you entered is not registered!!");
+      setTimeout(() => {
+        setIsCheckoutDisable(false);
+      }, TOAST_DURATION + 1000);
     }
   };
 
@@ -62,7 +70,11 @@ const Login = () => {
           </div>
         </div>
         <div className={styles.field}>
-          <button data-testid="test_submitBtn" className={styles.submit_btn}>
+          <button
+            disabled={isCheckoutDisable}
+            data-testid="test_submitBtn"
+            className={styles.submit_btn}
+          >
             Login
           </button>
         </div>

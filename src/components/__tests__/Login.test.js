@@ -5,13 +5,14 @@ import { StaticRouter } from "react-router-dom/server";
 import { fireEvent, render } from "@testing-library/react";
 import Login from "../../pages/Login.js";
 import Header from "../Header.js";
+import { ToastContainer } from "react-toastify";
 
-global.alert = jest.fn(() => "alert");
 global.scrollTo = jest.fn(() => "scrollTo");
 
-test("Click on submit button alert message should be displayed ", () => {
+test("Click on submit button alert message should be displayed ", async () => {
   const login = render(
     <StaticRouter>
+      <ToastContainer />
       <Provider store={store}>
         <AuthProvider>
           <Login />
@@ -28,9 +29,14 @@ test("Click on submit button alert message should be displayed ", () => {
   fireEvent.change(InPassword, { target: { value: "hello" } });
 
   fireEvent.click(submitBtn);
-  expect(global.alert).toHaveBeenCalledWith(
+  let element = await login.findByText(
     "The Email you entered is not registered!!"
   );
+  expect(element).not.toBe("");
+
+  /* expect(global.alert).toHaveBeenCalledWith(
+    "The Email you entered is not registered!!"
+  ); */
 });
 
 test("Click on submit button email and password should be filled ", () => {

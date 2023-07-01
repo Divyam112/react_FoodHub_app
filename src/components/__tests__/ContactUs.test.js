@@ -4,13 +4,14 @@ import { Provider } from "react-redux";
 import { StaticRouter } from "react-router-dom/server";
 import { fireEvent, render } from "@testing-library/react";
 import ContactUs from "../../pages/ContactUs.js";
+import { ToastContainer, toast } from "react-toastify";
 
-global.alert = jest.fn(() => "alert");
 global.scrollTo = jest.fn(() => "scroll");
 
-test("Click on submit button alert message should be displayed ", () => {
+test("Click on submit button alert message should be displayed ", async () => {
   const contact = render(
     <StaticRouter>
+      <ToastContainer />
       <Provider store={store}>
         <AuthProvider>
           <ContactUs />
@@ -33,9 +34,14 @@ test("Click on submit button alert message should be displayed ", () => {
   //expect(InTextMsg.value).toBe("hello");
 
   fireEvent.click(submitBtn);
-  expect(global.alert).toHaveBeenCalledWith(
+
+  let element = await contact.findByText(
     "Thank you for your valuable feedback !!"
   );
+  expect(element).not.toBe("");
+  /*  expect(global.alert).toHaveBeenCalledWith(
+    "Thank you for your valuable feedback !!"
+  ); */
   //expect(global.scrollTo).toBeCalledWith(0, 0);
 });
 

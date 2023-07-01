@@ -3,12 +3,15 @@ import styles from "../styles/cart.module.css";
 import emptyCartImg from "../assets/images/empty_cart.jpg";
 import { useNavigate } from "react-router-dom";
 import { addItem, clearCart, removeItem } from "../utils/cartSlice";
-import { CDN_IMG_URL } from "../utils/Constants.js";
+import { CDN_IMG_URL, TOAST_DURATION } from "../utils/Constants.js";
+import { toast } from "react-toastify";
+import { useState } from "react";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isCheckoutDisable, setIsCheckoutDisable] = useState(false);
   let totalAmount = 0;
 
   const HandleClearCart = () => {
@@ -21,6 +24,17 @@ const Cart = () => {
 
   const HandleReduceItem = (item) => {
     dispatch(removeItem(item));
+  };
+
+  const HandleCheckout = () => {
+    setIsCheckoutDisable(true);
+    toast.success(
+      `Thank you for placing your order.Order #${Math.random().toString(15)} !!`
+    );
+    setTimeout(() => {
+      dispatch(clearCart());
+      navigate("/", window.scrollTo(0, 0));
+    }, TOAST_DURATION + 1000);
   };
 
   if (cartItems?.items?.length === 0) {
@@ -106,7 +120,13 @@ const Cart = () => {
         </div>
       </div>
       <div style={{ margin: "30px" }}>
-        <button className="submit_btnContainer submit_Btn">Checkout</button>
+        <button
+          disabled={isCheckoutDisable}
+          className="submit_btnContainer submit_Btn"
+          onClick={() => HandleCheckout()}
+        >
+          Checkout
+        </button>
         <button
           data-testid="test_clearBtn"
           className="submit_btnContainer clear_Btn"

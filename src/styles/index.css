@@ -46,9 +46,10 @@ body {
     background-color: rgb(240, 49, 49);
 }
 
-.submit_btnContainer:hover {
+.submit_Btn:hover,
+.clear_Btn:hover {
     box-shadow: 0 3px 3px gray;
-}
+}   
 
 .submit_Btn:active {
     background-color: rgb(4, 4, 127);
@@ -56,4 +57,16 @@ body {
 
 .clear_Btn:active {
     background-color: rgb(209, 19, 19);
+}
+
+
+.submit_Btn[disabled] {
+    pointer-events: none;
+    background-color: gray;
+}
+
+/* toast style */
+
+.toast_design{
+    width: 400px;
 }

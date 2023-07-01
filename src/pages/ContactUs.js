@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import contactUsImg from "../assets/images/contact_img.jpg";
 import styles from "../styles/contact.module.css";
+import { TOAST_DURATION } from "../utils/Constants.js";
 
 const ContactUs = () => {
   const [name, setName] = useState("");
@@ -9,6 +11,7 @@ const ContactUs = () => {
   const [mobileNumber, setMobileNumber] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
+  const [isCheckoutDisable, setIsCheckoutDisable] = useState(false);
 
   const navigate = useNavigate();
 
@@ -25,13 +28,13 @@ const ContactUs = () => {
       //alert("Please provide valid phone number !!");
     }
     if (!error) {
-      alert("Thank you for your valuable feedback !!");
+      //alert("Thank you for your valuable feedback !!");
+      setIsCheckoutDisable(true);
+      toast.success("Thank you for your valuable feedback !!");
       setTimeout(() => {
         navigate("/", window.scrollTo(0, 0));
-      }, 1000);
+      }, TOAST_DURATION + 1000);
     }
-
-    //navigate to home page
   };
 
   const onHandleChangeNumeric = (e) => {
@@ -126,6 +129,7 @@ const ContactUs = () => {
             </span>
             <div>
               <button
+                disabled={isCheckoutDisable}
                 data-testid="test_submitBtn"
                 className="submit_btnContainer submit_Btn"
               >
