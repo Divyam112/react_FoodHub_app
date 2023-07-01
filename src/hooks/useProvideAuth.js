@@ -4,7 +4,7 @@ const useProvideAuth = () => {
   const [user, setUser] = useState(null);
 
   const login = async () => {
-    setUser({ name: "Guest123", email: "guest@gmail.com" });
+    setUser({ name: "Guest User", email: "guest@gmail.com" });
   };
 
   const logout = async () => {
